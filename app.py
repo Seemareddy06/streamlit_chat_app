@@ -39,9 +39,7 @@ with st.sidebar:
         api_key = st.text_input("Enter Groq API Key", type="password")
         model = st.selectbox("Choose Model", [
             "llama3-8b-8192",
-            "llama3-70b-8192",
-            "mixtral-8x7b-32768",
-            "gemma-7b-it"
+            "llama3-70b-8192"
         ])
 
     if st.button("🧹 Clear Chat"):
@@ -111,3 +109,4 @@ if prompt := st.chat_input("Type your message..."):
 
     st.session_state.messages.append({"role": "assistant", "content": reply})
     st.chat_message("assistant").markdown(reply)
+
